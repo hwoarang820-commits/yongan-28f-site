@@ -1,0 +1,56 @@
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="site-release" content="YONGAN-28F-WHITE-V1.2-SKP-ROUTES">
+<title>永安新村都更案｜28F 基地環境互動分析</title>
+<link rel="stylesheet" href="./assets/site.css">
+
+
+
+
+
+</head>
+<body>
+<div id="stage"><canvas id="scene" aria-label="可旋轉、縮放的3D基地模型"></canvas><div id="modelFallback" aria-hidden="true"><img alt="28F 住宅基地環境畫面" src="./assets/model_fallback.png"/><div class="modelFallbackNote">此瀏覽器無法啟用 WebGL2，已顯示 28F 模型靜態視圖。建議使用支援 WebGL2 的 Chrome、Edge 或 Safari 開啟。</div></div></div>
+<svg id="analysisOverlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"></svg>
+<div class="grid-overlay"></div><div class="noise"></div>
+<div class="schematic-tag">YONGAN / 28F · SITE ANALYSIS</div>
+<div id="loadflag" class="loadflag">載入基地 3D 場景…</div>
+<header class="topbar">
+ <div class="brand"><span class="brandmark"></span><div class="brandname">永安新村都更案 <span class="brand-option">28F</span><small>SITE / INTERACTIVE ANALYSIS</small></div></div>
+ <div class="topmeta"><span class="cap">SITE / ENVIRONMENT ANALYSIS</span><span class="pill">景美溪生活圈</span><button class="iconbtn" id="modelInfo" title="環境分析與判讀方法">ⓘ</button><button class="iconbtn" id="fullScreen" title="全螢幕切換">⛶</button></div>
+</header>
+<nav class="rail" id="rail" aria-label="章節導覽"></nav>
+<div id="mobileGestureHint">單指旋轉 · 雙指縮放</div>
+<div id="analysisGuide" class="analysis-guide"><b id="guideTitle">REAL MODEL</b><span id="guideSub">基地環境視覺化</span><div id="legendItems"></div></div>
+<div class="scene-badge"><span class="line"></span><span><b>360° INTERACTIVE MODEL</b>　·　拖曳旋轉 / 滾輪縮放 / 雙擊回正</span></div>
+<div class="stage-tools" aria-label="模型操作"><button type="button" id="resetView" title="回到目前章節的初始視角">↺ <span>重設視角</span></button><button type="button" id="toggleStory" aria-pressed="false" title="收合或展開分析資訊">▣ <span>專注模型</span></button></div>
+<div class="compass"><div id="compassRose"><span class="n">N</span><span class="s">S</span><span class="w">W</span><span class="e">E</span><span class="needle"></span></div></div>
+<aside class="story"><div id="story" class="story-container" aria-live="polite"></div></aside>
+<footer class="footer">
+  <select id="mobileChapter" aria-label="手機章節切換"></select>
+  <div class="footlabel"><b id="pageNo">00</b><span id="pageName">INTRODUCTION</span></div>
+  <div class="progress"><div id="progress" class="progress-inner"></div><div class="progress-ticks" id="progressTicks"></div></div>
+  <span class="foot-hint">← → / SPACE 切換章節　·　F 全螢幕</span>
+  <div class="bottom-controls"><button class="navbutton" id="prev" aria-label="上一章">‹</button><button class="navbutton" id="next" aria-label="下一章">›</button></div>
+</footer>
+<div class="overlay" id="modalWrap" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal"><button class="modalclose" id="modalClose">✕ 關閉</button>
+ <h2 id="modalTitle">環境分析與判讀方法</h2>
+ <h3>基地環境與交通</h3>
+ <p>3D 場景依基地及周邊環境建築模型呈現。車行、人行、住戶、外送與物業管理動線採各自的線型與動態圖示，對應設計圖面上的路徑。雙向動線以往復移動示意。</p>
+ <h3>逐層景觀視野</h3>
+ <p>北、東、南、西四向視點以 17 樓觀察位置為基準，1 樓層高 6.0 公尺，2～28 樓每層 3.5 公尺。固定淡紫色扇形代表主要視域，青綠色動態扇形代表旋轉掃描。視野圖形為幾何方向示意，未定量計算遮擋率。</p>
+ <h3>日照、風場與光影</h3>
+ <p>日照呈現三季節概念路徑；季風及颱風採代表性來風情境和下洗示意。此類動畫不等同法定日照檢討、實測氣象或 CFD 風場數據。即時陰影與環境反射用於建築空間感與材質呈現。</p>
+ <h3>鄰房高度與綠化</h3>
+ <p>鄰房高度為模型中的相對高差，並非主管機關核定建築高度。戶外綠地及地景以模型配置與材質呈現；實際基地界線及景觀面積仍應以核定圖說為準。</p>
+ <div class="layerlist" id="layerList" style="display:none"></div>
+</div></div>
+
+
+
+
+
+<script src="./assets/js/glb_decoder.js"></script>
+<script src="./assets/js/site.js"></script></body></html>
