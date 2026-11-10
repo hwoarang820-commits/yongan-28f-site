@@ -83,6 +83,7 @@ async function decodeSketchUpGLB(url, neighbors, towerBounds) {
     if(s.includes('water2'))return 15;
     if(s.includes('water'))return 7;
     if(s.includes('gravel'))return 10;
+    if(s.includes('col_g1')||s.includes('core1'))return 16;
     if(s.includes('core'))return 11;
     if(s.includes('temporary'))return 9;
     if(s.includes('building1') || s.includes('v6_block') || n.includes('鄰房'))return 8;

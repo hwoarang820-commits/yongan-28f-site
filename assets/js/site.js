@@ -941,7 +941,7 @@ async function load(){try{
  $('#layerList').innerHTML=(embeddedData.layers||[]).map(s=>`<span class="layeritem">${esc(s)}</span>`).join('');
  update28FChapters();
  loading.textContent='載入 3D 建築場景…';
- const r=await decodeSketchUpGLB('./assets/yongan_28f.glb',neighbors,bounds['04-住宅棟']);
+ const r=await decodeSketchUpGLB('./assets/yongan_28f.glb?v=20261110-white-colg1-core1',neighbors,bounds['04-住宅棟']);
  externalGroups=r.groups;decodedTextures=r.images;
  if(r.stats.max[1]-r.stats.min[1]<50)console.warn('請檢查GLB建築量體高度；目前高度差：',r.stats.max[1]-r.stats.min[1]);
  loading.textContent='建立環境光影效果…';
